@@ -35,18 +35,16 @@ while len(urls) > 0 and len(opened) < maxNumUrl:  #what is the first condition
         print("past:",childUrl)
         o_childurl = childUrl
         childUrl = urllib.parse.urljoin(seed_url, childUrl)
-        # print("seed_url=" + seed_url)
-        # print("original childurl=" + o_childurl)
+        print("seed_url=" + seed_url)
+        print("original childurl=" + o_childurl)
         print("post childurl=" + childUrl)
-        # print("seed_url in childUrl=" + str(seed_url in childUrl))
-        # print("Have we seen this childUrl=" + str(childUrl in seen))
+        print("seed_url in childUrl=" + str(seed_url in childUrl))
+        print("Have we seen this childUrl=" + str(childUrl in seen))
         if seed_url in childUrl and childUrl not in seen:
-            # print("***urls.append and seen.append***")
             urls.append(childUrl)
             seen.append(childUrl)
-        # else:
-            # print("######")
 
+print()
 print("num. of URLs seen = %d, and scanned = %d" % (len(seen), len(opened)))
 print("List of seen URLs:")
 for seen_url in seen:
